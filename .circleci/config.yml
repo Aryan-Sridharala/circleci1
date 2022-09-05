@@ -4,8 +4,8 @@ jobs:
     docker:
       - image: cimg/go:1.17
         auth:
-          username: mydockerhub-user
-          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+          username: "aryan3690"
+          password: "ZU@tGq@1BU1"  # context / project UI env-var reference
     steps:
       - checkout
       # ... steps for building/testing app ...
@@ -20,3 +20,7 @@ jobs:
           docker build -t Aryan-Sridharala/circleci1:$TAG .
           echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
           docker push Aryan-Sridharala/circleci1:$TAG
+workflows:
+  build-workflow:
+    jobs:
+      - build
